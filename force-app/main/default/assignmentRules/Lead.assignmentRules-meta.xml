@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <AssignmentRules xmlns="http://soap.sforce.com/2006/04/metadata">
     <assignmentRule>
+        <fullName>Conditional Round Robin Simple</fullName>
+        <active>false</active>
+        <ruleEntry>
+            <assignedTo>Rep_2</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <formula>Lead_Source_Web_Round_Robin__c = 1</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Rep_4</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <formula>Lead_Source_Web_Round_Robin__c = 2</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Rep_5</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <formula>Lead_Source_Web_Round_Robin__c = 3</formula>
+        </ruleEntry>
+    </assignmentRule>
+    <assignmentRule>
         <fullName>Conditional Round Robin</fullName>
         <active>true</active>
         <ruleEntry>
@@ -90,28 +109,6 @@
                 <field>Lead.Lead_Number_Round_Robin__c</field>
                 <operation>equals</operation>
                 <value>5</value>
-            </criteriaItems>
-        </ruleEntry>
-    </assignmentRule>
-    <assignmentRule>
-        <fullName>Standard</fullName>
-        <active>false</active>
-        <ruleEntry>
-            <assignedTo>wwalt010@cunning-narwhal-65qe7r.com</assignedTo>
-            <assignedToType>User</assignedToType>
-            <criteriaItems>
-                <field>Lead.Country</field>
-                <operation>equals</operation>
-                <value>US,USA,United States,United States of America</value>
-            </criteriaItems>
-        </ruleEntry>
-        <ruleEntry>
-            <assignedTo>wwalt010@cunning-narwhal-65qe7r.com</assignedTo>
-            <assignedToType>User</assignedToType>
-            <criteriaItems>
-                <field>Lead.Country</field>
-                <operation>notEqual</operation>
-                <value>US,USA,United States,United States of America</value>
             </criteriaItems>
         </ruleEntry>
     </assignmentRule>
