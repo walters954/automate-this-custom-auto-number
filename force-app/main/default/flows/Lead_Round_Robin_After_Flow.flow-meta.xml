@@ -14,23 +14,7 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Update_Lead_Source_Web_Number</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
-        <name>Update_Lead_Source_Web_Number</name>
-        <label>Update Lead Source Web Number</label>
-        <locationX>50</locationX>
-        <locationY>647</locationY>
-        <assignmentItems>
-            <assignToReference>$Record.Lead_Source_Web_Number__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Get_Custom_Setting_Auto_Number.Lead_Source_Web_Auto_Number__c</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Update_Lead</targetReference>
+            <targetReference>Update_Custom_Setting</targetReference>
         </connector>
     </assignments>
     <decisions>
@@ -38,9 +22,6 @@
         <label>Check Lead Source</label>
         <locationX>182</locationX>
         <locationY>431</locationY>
-        <defaultConnector>
-            <targetReference>Update_Lead</targetReference>
-        </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Source_Web</name>
@@ -59,8 +40,8 @@
         </rules>
     </decisions>
     <environments>Default</environments>
-    <interviewLabel>Lead Round-Robin {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>Lead Round-Robin</label>
+    <interviewLabel>Lead Round-Robin: After Flow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Lead Round-Robin: After Flow</label>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -96,19 +77,9 @@
     <recordUpdates>
         <name>Update_Custom_Setting</name>
         <label>Update Custom Setting</label>
-        <locationX>182</locationX>
-        <locationY>947</locationY>
+        <locationX>50</locationX>
+        <locationY>647</locationY>
         <inputReference>Get_Custom_Setting_Auto_Number</inputReference>
-    </recordUpdates>
-    <recordUpdates>
-        <name>Update_Lead</name>
-        <label>Update Lead</label>
-        <locationX>182</locationX>
-        <locationY>839</locationY>
-        <connector>
-            <targetReference>Update_Custom_Setting</targetReference>
-        </connector>
-        <inputReference>$Record</inputReference>
     </recordUpdates>
     <start>
         <locationX>56</locationX>
